@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ingy77.github.io/One-Piece-Bounty-Board/sitemap.xml
