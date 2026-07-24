@@ -9,40 +9,12 @@ via any medium, is strictly prohibited.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="oILp_RDc9WF_gq2xaHHDM9DRroIHFeQzlEPRS2Xou88" />
+<meta name="google-site-verification" content="wlQNEIeqH0xPORO_JqemJzK-xbCvpwENtHI4hGOix_M" />a
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Which One Piece Character Are You? — Bounty Board</title>
-<meta name="description" content="Take the free One Piece personality quiz and find out which character you really are. Get your wanted poster, official bounty, Devil Fruit power, and crew position — Pirate, Marine, or Revolutionary.">
-<meta name="keywords" content="one piece quiz, which one piece character are you, one piece personality test, devil fruit quiz, one piece bounty calculator, wanted poster generator, luffy quiz, zoro quiz, law quiz, ace quiz, one piece character test, pirate marine revolutionary quiz, one piece aesthetic quiz, devil fruit powers, one piece crew position quiz">
-<meta property="og:title" content="Which One Piece Character Are You? — Bounty Board">
-<meta property="og:description" content="15 questions. One wanted poster. Find your One Piece character, bounty, Devil Fruit, and crew position.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com/">
-<meta property="og:image" content="https://yourdomain.com/preview.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Which One Piece Character Are You? — Bounty Board">
-<meta name="twitter:description" content="15 questions. One wanted poster. Find your One Piece character, bounty, Devil Fruit, and crew position.">
-<meta name="twitter:image" content="https://yourdomain.com/preview.png">
-<link rel="canonical" href="https://yourdomain.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Bounty Board — One Piece Character Quiz",
-  "url": "https://yourdomain.com/",
-  "applicationCategory": "Entertainment",
-  "operatingSystem": "Any",
-  "description": "Take the free One Piece personality quiz and find out which character you really are. Get your wanted poster, official bounty, Devil Fruit power, and crew position — Pirate, Marine, or Revolutionary.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
 <style>
     :root{
         --parchment:#EDE0C0;
@@ -75,6 +47,7 @@ via any medium, is strictly prohibited.
         overflow-x:hidden;
     }
 
+    /* ---------- Parchment card with torn edges ---------- */
     .box{
         position:relative;
         max-width:580px;
@@ -104,7 +77,7 @@ via any medium, is strictly prohibited.
         pointer-events:none;
     }
 
-    .title{
+    h1.title{
         font-family:'Pirata One', cursive;
         text-align:center;
         color:var(--navy);
@@ -122,6 +95,7 @@ via any medium, is strictly prohibited.
         margin-bottom:18px;
     }
 
+    /* ---------- Intro screen ---------- */
     #intro-area{ text-align:center; }
     .compass-wrap{ display:flex; justify-content:center; margin:6px 0 18px; }
     .intro-copy{
@@ -158,6 +132,7 @@ via any medium, is strictly prohibited.
     .start-btn:hover{ background:var(--ink); }
     .intro-note{ font-size:0.68em; color:var(--brown); opacity:0.8; margin-top:10px; }
 
+    /* ---------- Ship's wheel progress ---------- */
     .wheel-wrap{ display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:18px; }
     #wheel-svg { flex-shrink:0; }
     .wheel-label{ font-size:0.8em; color:var(--brown); }
@@ -200,6 +175,7 @@ via any medium, is strictly prohibited.
     .btn:hover{ background:var(--brown); color:var(--parchment); transform:translateX(3px); }
     .btn:hover::before{ opacity:1; }
 
+    /* ---------- Result: Wanted Poster ---------- */
     #result-area{ display:none; text-align:center; }
     .wanted-stamp{
         font-family:'Pirata One', cursive;
@@ -270,19 +246,12 @@ via any medium, is strictly prohibited.
         font-family:'Pirata One', cursive;
         color:var(--red);
         font-size:1.7em;
-        margin:6px 0 4px;
+        margin:6px 0 16px;
         letter-spacing:1px;
     }
     .bounty span{ font-size:0.5em; display:block; color:var(--brown); letter-spacing:2px; font-family:'Special Elite', monospace;}
-    .bounty-source{
-        font-size:0.6em;
-        letter-spacing:1px;
-        color:var(--brown);
-        opacity:0.75;
-        margin-bottom:16px;
-        text-transform:uppercase;
-    }
 
+    /* ---------- Verdict banner ---------- */
     .verdict-banner{
         margin:0 0 18px;
         padding:12px 14px;
@@ -314,6 +283,7 @@ via any medium, is strictly prohibited.
         font-size:0.68em; letter-spacing:2px; text-transform:uppercase; color:var(--brown); margin-bottom:6px; display:block;
     }
 
+    /* ---------- Devil Fruit card ---------- */
     .fruit-card{
         display:flex;
         align-items:center;
@@ -327,7 +297,7 @@ via any medium, is strictly prohibited.
         position:relative;
     }
     .fruit-card::before{
-        content:attr(data-fruit-badge);
+        content:"NEWLY DISCOVERED";
         position:absolute;
         top:-9px; left:12px;
         background:var(--parchment);
@@ -367,6 +337,7 @@ via any medium, is strictly prohibited.
     .trait-track{ flex:1; height:8px; background:rgba(107,66,38,0.2); border-radius:4px; overflow:hidden; }
     .trait-fill{ height:100%; background:linear-gradient(90deg, var(--gold), var(--red)); width:0%; transition:width 0.8s ease; border-radius:4px; }
 
+    /* ---------- Rarity stat ---------- */
     .rarity-line{
         font-size:0.78em;
         color:var(--brown);
@@ -377,56 +348,7 @@ via any medium, is strictly prohibited.
     }
     .rarity-line b{ color:var(--red); }
 
-    .survival-card{
-        margin:0 0 18px;
-        padding:14px 16px;
-        background:rgba(255,255,255,0.3);
-        border:2px solid var(--ink);
-        border-radius:4px;
-        text-align:left;
-    }
-    .survival-top{
-        display:flex;
-        align-items:baseline;
-        justify-content:space-between;
-        margin-bottom:8px;
-        flex-wrap:wrap;
-        gap:6px;
-    }
-    .survival-heading{
-        font-size:0.68em;
-        letter-spacing:2px;
-        text-transform:uppercase;
-        color:var(--brown);
-        font-weight:bold;
-    }
-    .survival-pct{
-        font-family:'Pirata One', cursive;
-        font-size:1.6em;
-        color:var(--green);
-        letter-spacing:1px;
-    }
-    .survival-pct.risky{ color:var(--red); }
-    .survival-track{
-        height:10px;
-        background:rgba(107,66,38,0.2);
-        border-radius:5px;
-        overflow:hidden;
-        margin-bottom:8px;
-    }
-    .survival-fill{
-        height:100%;
-        background:linear-gradient(90deg, var(--red), var(--gold), var(--green));
-        width:0%;
-        transition:width 0.8s ease;
-        border-radius:5px;
-    }
-    .survival-desc{
-        font-size:0.78em;
-        color:var(--ink);
-        line-height:1.5;
-    }
-
+    /* ---------- Share ---------- */
     .share-wrap{ margin-bottom:16px; }
     .share-heading{ font-size:0.68em; letter-spacing:2px; text-transform:uppercase; color:var(--brown); margin-bottom:8px; }
     .share-row{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
@@ -477,9 +399,8 @@ via any medium, is strictly prohibited.
             Fifteen questions. No right answers — only the ones that sound like you.
             Answer honestly and the Bounty Board will chart your instincts across six traits
             (Freedom, Power, Justice, Knowledge, Loyalty, Ambition), match you against a roster
-            of pirates, marines, and revolutionaries, and print your wanted poster — with your
-            match's real bounty and Devil Fruit where one exists in the story, or an original
-            fruit grown just for you if it doesn't.
+            of pirates, marines, and revolutionaries, and print your wanted poster — plus an
+            original Devil Fruit grown just for you.
         </p>
         <div class="intro-factions">
             <span class="intro-chip pirate">☠ Pirate</span>
@@ -491,7 +412,7 @@ via any medium, is strictly prohibited.
     </div>
 
     <div id="quiz-area" style="display:none;">
-        <h2 class="title">Bounty Board</h2>
+        <h1 class="title">Bounty Board</h1>
         <div class="subtitle">Find your true pirate nature</div>
         <div class="wheel-wrap">
             <svg id="wheel-svg" width="70" height="70" viewBox="0 0 70 70"></svg>
@@ -512,7 +433,6 @@ via any medium, is strictly prohibited.
             <div class="role-line" id="role-line"></div>
             <div class="role-desc" id="role-desc"></div>
             <div class="bounty" id="bounty-amount"><span>BOUNTY</span></div>
-            <div class="bounty-source" id="bounty-source"></div>
 
             <div class="verdict-banner">
                 <div id="verdict-title" class="verdict-title"></div>
@@ -524,7 +444,7 @@ via any medium, is strictly prohibited.
                 <span id="char-report"></span>
             </div>
 
-            <div class="fruit-card" id="fruit-card">
+            <div class="fruit-card">
                 <div class="fruit-icon" id="fruit-icon"></div>
                 <div class="fruit-info">
                     <div class="fruit-name" id="fruit-name"></div>
@@ -535,15 +455,6 @@ via any medium, is strictly prohibited.
             </div>
 
             <div class="trait-bars" id="trait-bars"></div>
-
-            <div class="survival-card">
-                <div class="survival-top">
-                    <span class="survival-heading">Survival Odds — Grand Line</span>
-                    <span class="survival-pct" id="survival-pct"></span>
-                </div>
-                <div class="survival-track"><div class="survival-fill" id="survival-fill"></div></div>
-                <div class="survival-desc" id="survival-desc"></div>
-            </div>
 
             <div class="rarity-line" id="rarity-line"></div>
         </div>
@@ -749,104 +660,6 @@ const factionVerdictCopy = {
     revolutionary:"Your compass points to justice without a uniform. You're not a pirate chasing treasure or a marine following command — you're out to change the rules themselves."
 };
 
-/* ============================================================
-   CANON reference data
-   Bounty figures and Devil Fruit names/types below are the
-   publicly known facts about each character from the One Piece
-   story (character names, fruit names, and bounty numbers are
-   factual reference details, not reproduced text or artwork).
-   Powers and flavor text are written fresh, in this file's own
-   voice, rather than quoted from any source.
-   Characters with no canon Devil Fruit, or a marine with no
-   official bounty, fall back to the original procedural
-   generator further down so every result still fills out.
-   ============================================================ */
-const CANON_BOUNTIES = {
-    "Monkey D. Luffy": 3000000000,
-    "Roronoa Zoro": 1111000000,
-    "Trafalgar Law": 3000000000,
-    "Eustass Kid": 3000000000,
-    "Nami": 366000000,
-    "Marshall D. Teach": 3996000000,
-    "Nico Robin": 930000000,
-    "Donquixote Doflamingo": 340000000,
-    "Dracule Mihawk": 3590000000,
-    "Gol D. Roger": 5564800000,
-    "Edward Newgate": 5046000000,
-    "Vinsmoke Sanji": 1032000000,
-    "Jinbe": 1100000000,
-    "Portgas D. Ace": 550000000,
-    "Tony Tony Chopper": 1000,
-    "Usopp": 500000000,
-    "Boa Hancock": 1659000000,
-    "Shanks": 4048900000,
-    "Franky": 394000000,
-    "Brook": 383000000,
-    "Sabo": 602000000,
-    "Bartholomew Kuma": 296000000,
-    "Cavendish": 330000000,
-    "X Drake": 222000000,
-    "Jewelry Bonney": 320000000,
-    "Gecko Moria": 320000000,
-    "Arlong": 20000000,
-    "Kaido": 4611100000,
-    "Charlotte Linlin (Big Mom)": 4388000000,
-    "Basil Hawkins": 320000000,
-    "Scratchmen Apoo": 350000000,
-    "Buggy": 3189000000
-};
-
-const CANON_FRUITS = {
-    "Monkey D. Luffy": { name:"Gomu Gomu no Mi", type:"Mythical Zoan", power:"Turns the user's entire body to rubber — every punch, stretch, and impact bounces rather than breaks.", flavor:"Long believed to be a simple Paramecia, it later turned out to hold something far older and far stranger sleeping inside it." },
-    "Roronoa Zoro": null,
-    "Trafalgar Law": { name:"Ope Ope no Mi", type:"Paramecia", power:"Creates a spherical \"Room\" in which the user can freely rearrange, swap, or operate on anything inside — people included.", flavor:"Whispered about in the underworld as the fruit that can hand someone eternal youth, at a price no one wants to pay." },
-    "Eustass Kid": { name:"Jiki Jiki no Mi", type:"Paramecia", power:"Lets the user generate and control powerful magnetic fields, pulling metal — and anything attached to it — wherever they please.", flavor:"Scrap yards near its owner's old hideouts are said to hum faintly, even years later." },
-    "Nami": null,
-    "Marshall D. Teach": { name:"Yami Yami no Mi", type:"Logia", power:"Grants command over darkness itself, able to swallow light, nullify other Devil Fruit powers on contact, and pull enemies into a crushing void.", flavor:"The only Logia said to hurt its own user just as much as anyone caught in it." },
-    "Nico Robin": { name:"Hana Hana no Mi", type:"Paramecia", power:"Lets the user sprout duplicate arms, legs, eyes, or ears from any surface they can reach, near or far.", flavor:"Archaeologists joke that it's the perfect fruit for someone who'd rather read a room from a dozen angles at once." },
-    "Donquixote Doflamingo": { name:"Ito Ito no Mi", type:"Paramecia", power:"Generates razor-sharp strings the user can wield as blades, puppet strings for other people's bodies, or an aerial web to walk and glide across.", flavor:"Underworld brokers say its owner never needed to lift a finger — the strings did that for him." },
-    "Dracule Mihawk": null,
-    "Gol D. Roger": null,
-    "Edward Newgate": { name:"Gura Gura no Mi", type:"Paramecia", power:"Grants the ability to generate devastating tremors and shockwaves through anything it touches — earth, sea, or air.", flavor:"Old sailors call it the fruit that could crack the world in two, and mean it almost literally." },
-    "Vinsmoke Sanji": null,
-    "Jinbe": null,
-    "Portgas D. Ace": { name:"Mera Mera no Mi", type:"Logia", power:"Lets the user become, generate, and control fire at will, turning their whole body into living flame.", flavor:"Passed down after its first owner's death, the fruit is remembered as much for who carried it as for what it does." },
-    "Tony Tony Chopper": { name:"Hito Hito no Mi", type:"Zoan", power:"Grants human intelligence and the ability to shift between animal, human, and several hybrid forms.", flavor:"The fruit that turned one small reindeer into a fully qualified, if easily flattered, doctor." },
-    "Usopp": null,
-    "Boa Hancock": { name:"Mero Mero no Mi", type:"Paramecia", power:"Turns anyone who feels attraction toward the user, and acts on it, to stone on the spot.", flavor:"Said to work on hearts as much as bodies — it's the resisting, not the looking, that keeps a person safe." },
-    "Shanks": null,
-    "Franky": null,
-    "Brook": { name:"Yomi Yomi no Mi", type:"Paramecia", power:"Returns a soul to its body once, after death, and lets the user's soul leave and re-enter their body at will.", flavor:"Its first owner spent decades wandering alone afterward, just to keep a promise to old friends." },
-    "Bepo": null,
-    "Sabo": { name:"Mera Mera no Mi", type:"Logia", power:"Lets the user become, generate, and control fire at will, turning their whole body into living flame.", flavor:"Inherited, not eaten by choice — a fire kept burning for someone who couldn't carry it any further." },
-    "Monkey D. Dragon": null,
-    "Bartholomew Kuma": { name:"Nikyu Nikyu no Mi", type:"Paramecia", power:"Lets the user repel anything they touch with their paw-shaped palms — attacks, air, pain, even memories.", flavor:"Rumored to be able to push away suffering itself, one paw-print at a time, for people who never asked for the favor." },
-    "Cavendish": null,
-    "X Drake": { name:"Ryu Ryu no Mi, Model: Allosaurus", type:"Ancient Zoan", power:"Lets the user transform into a prehistoric allosaurus, or a hybrid of the two, gaining massive size and raw bite force.", flavor:"One of only a handful of confirmed dinosaur-type fruits ever recorded on the Grand Line." },
-    "Jewelry Bonney": { name:"Toshi Toshi no Mi", type:"Paramecia", power:"Lets the user alter their own or someone else's physical age, from infancy to advanced old age, on demand.", flavor:"A fruit that turns the one thing nobody can usually control — time on a body — into a dial someone can spin." },
-    "Gecko Moria": { name:"Kage Kage no Mi", type:"Paramecia", power:"Lets the user steal, stitch, and command shadows, animating whatever they're sewn onto and stealing strength from whoever they're torn from.", flavor:"Graveyards near its owner's old territory have an unsettling habit of staying a little too quiet." },
-    "Arlong": null,
-    "Kaido": { name:"Uo Uo no Mi, Model: Seiryu", type:"Mythical Zoan", power:"Lets the user transform into a colossal azure dragon, or a hybrid form, commanding wind, lightning, and immense physical power.", flavor:"Its owner is remembered less for eating it and more for refusing, for decades, to lose while wearing it." },
-    "Charlotte Linlin (Big Mom)": { name:"Soru Soru no Mi", type:"Paramecia", power:"Lets the user pull a portion of someone's lifespan out as a visible soul-fragment, then plant it into objects or people to animate them.", flavor:"Every gift from its owner is said to come with strings that trace straight back to this fruit." },
-    "Basil Hawkins": { name:"Wara Wara no Mi", type:"Paramecia", power:"Lets the user bind a portion of any damage they'd take onto straw effigies, or transfer it onto whoever the doll is modeled after.", flavor:"Its owner is famous for reading fortunes with cards — the fruit is why he's rarely worried about the bad ones." },
-    "Scratchmen Apoo": { name:"Oto Oto no Mi", type:"Paramecia", power:"Turns the user's body into a living instrument, letting them fire sound waves as blades or bludgeoning shockwaves.", flavor:"Crews that have crossed him describe the fight less as a battle and more as an unwanted concert." },
-    "Imu": null,
-    "Buggy": { name:"Bara Bara no Mi", type:"Paramecia", power:"Lets the user split their body into separate floating pieces at will and reassemble them, immune to attacks that would normally cut them down.", flavor:"The first known Paramecia in the story, and still one of the hardest to actually finish off in a straight fight." },
-    "Uta": { name:"Uta Uta no Mi", type:"Paramecia", power:"Lets the user pull anyone who hears their singing into a shared world built entirely from that song.", flavor:"Audiences who've heard it firsthand say it's less a performance and more an invitation you don't remember accepting." },
-    "Rebecca": null,
-    "Koby": null,
-    "Smoker": { name:"Moku Moku no Mi", type:"Logia", power:"Grants command over smoke, letting the user become, generate, and move as an intangible, choking cloud of it.", flavor:"Recruits under his command learn fast that outrunning him is not the same as outrunning his smoke." },
-    "Tashigi": null,
-    "Monkey D. Garp": null,
-    "Sengoku": { name:"Hito Hito no Mi, Model: Daibutsu", type:"Mythical Zoan", power:"Lets the user transform into a colossal golden Buddha, projecting massive shockwaves and near-untouchable defense.", flavor:"Recruits describe seeing him use it exactly once, and never needing the story repeated." },
-    "Kuzan (Aokiji)": { name:"Hie Hie no Mi", type:"Logia", power:"Grants command over ice, letting the user freeze entire stretches of ocean and become an intangible mass of cold themselves.", flavor:"Ports he's passed through still tell stories about the sea that froze over in minutes." },
-    "Borsalino (Kizaru)": { name:"Pika Pika no Mi", type:"Logia", power:"Lets the user become, generate, and move as living light, striking at effectively light speed and reflecting off nearly any surface.", flavor:"Witnesses rarely see the attack land — only the aftermath, well after the fact." },
-    "Sakazuki (Akainu)": { name:"Magu Magu no Mi", type:"Logia", power:"Grants command over magma, letting the user generate and become a mass of molten rock hot enough to burn through nearly anything.", flavor:"Regarded as one of the most destructive fruits on record, matched only by the conviction of the man who carries it." },
-    "Issho (Fujitora)": null,
-    "Vergo": null,
-    "Hina": { name:"Awa Awa no Mi", type:"Paramecia", power:"Lets the user generate soap and bubbles that strip strength and traction from anything they coat, cleaning a fight as much as fighting it.", flavor:"Prisoners transported under her watch joke, bitterly, that she leaves them squeaky clean and unable to throw a punch." }
-};
-
 /* ---------- Original stylized SVG portrait generator ----------
    Purely procedural shapes/colors derived from the character's name —
    no copyrighted artwork or likenesses are used. */
@@ -864,8 +677,8 @@ function generatePortrait(character){
     const hue2 = (hue1 + 40 + (h % 60)) % 360;
     const skinTones = ["#E8C39E","#D9A876","#C68A5C","#8D5A3B","#F2D5B5"];
     const skin = skinTones[h % skinTones.length];
-    const hairStyle = h % 5;
-    const accessory = (h >> 3) % 4;
+    const hairStyle = h % 5; // 0-4 different silhouette shapes
+    const accessory = (h >> 3) % 4; // 0-3 accessory types
     const factionColors = { pirate:"#8B2E2E", marine:"#1B3A4B", revolutionary:"#2E6B3E" };
     const bandColor = factionColors[character.faction] || "#6B4226";
 
@@ -899,12 +712,13 @@ function generatePortrait(character){
 }
 
 /* ============================================================
-   Procedural Devil Fruit generator (fallback)
-   Used only for characters with no canon Devil Fruit above.
+   Procedural Devil Fruit generator
    Entirely original fruit — name, type, and flavor text are
    synthesized from the user's own trait vector, not pulled from
    the series. Deterministic: the same answers always regrow the
-   same fruit.
+   same fruit, but the exact score mix (not just the character
+   match) shapes the result, so two people who land on the same
+   character can still get different fruits.
    ============================================================ */
 const fruitSyllables = {
     freedom: ["Kaz","Sora","Fu","Wynd","Rei"],
@@ -948,7 +762,9 @@ function traitLabel(key){
     return map[key];
 }
 
-function generateOriginalDevilFruit(userVector, labelKeys){
+function generateDevilFruit(userVector, labelKeys){
+    // Rank traits by score, using the exact vector (not the matched character)
+    // so the fruit is personal even when the character match is shared.
     const ranked = labelKeys
         .map((key,i)=>({ key, value:userVector[i] }))
         .sort((a,b)=>b.value-a.value);
@@ -956,6 +772,8 @@ function generateOriginalDevilFruit(userVector, labelKeys){
     const primary = ranked[0].key;
     const secondary = ranked[1].key;
 
+    // Seed purely from the rounded vector so results are stable for a given
+    // set of answers but vary across the full space of possible score combos.
     const seedStr = userVector.map(v=>v.toFixed(1)).join("-");
     const h = hashString(seedStr);
 
@@ -968,13 +786,13 @@ function generateOriginalDevilFruit(userVector, labelKeys){
     const power = fruitPowerTemplates[primary](ranked[0].value - ranked[1].value >= 2 ? null : traitLabel(secondary).toLowerCase());
     const flavor = fruitFlavorTemplates[primary];
 
-    return { name, type, power, flavor, primary, seedHash: h, canon:false };
+    return { name, type, power, flavor, primary, seedHash: h };
 }
 
-function generateFruitIcon(seedHash){
-    const h = seedHash;
+function generateFruitIcon(fruit){
+    const h = fruit.seedHash;
     const hue = h % 360;
-    const bodyShape = h % 3;
+    const bodyShape = h % 3; // round / elongated / clustered
     const spikes = (h >> 5) % 2 === 0;
     const swirlColor = `hsl(${(hue+150)%360},70%,55%)`;
     const bodyColor = `hsl(${hue},65%,55%)`;
@@ -1003,20 +821,11 @@ function generateFruitIcon(seedHash){
     return `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">${stem}${body}${swirl}</svg>`;
 }
 
-/* Resolve the Devil Fruit to show: canon fruit if the matched
-   character has one on record, otherwise the original procedural
-   fruit generated from the user's own trait vector. */
-function resolveDevilFruit(character, userVector, traitKeys){
-    const canon = CANON_FRUITS[character.name];
-    if(canon){
-        const seedHash = hashString(canon.name);
-        return { name:canon.name, type:canon.type, power:canon.power, flavor:canon.flavor, seedHash, canon:true };
-    }
-    return generateOriginalDevilFruit(userVector, traitKeys);
-}
-
 /* ============================================================
    Crew position generator
+   Pirates get a crew role, Marines get a rank/post, Revolutionaries
+   get an army post — all chosen from the user's dominant trait, with
+   a hash-based tiebreak when a trait maps to more than one option.
    ============================================================ */
 const PIRATE_ROLES = [
     { trait:"ambition", title:"Captain", label:"Crew Position", desc:"You're the one calling the shots — the crew follows your read on the horizon, for better or worse." },
@@ -1067,6 +876,7 @@ function generateCrewRole(userVector, traitKeys, faction, seedHash){
             return pick;
         }
     }
+    // Fallback, should not normally trigger since every trait is covered
     return table[seedHash % table.length];
 }
 
@@ -1152,29 +962,6 @@ function selectAnswer(trait, value){
     }
 }
 
-/* ============================================================
-   Survival Odds
-   A deterministic estimate of how well this profile would hold
-   up on the Grand Line, weighted toward Power, Knowledge, and
-   Loyalty (raw strength, good judgment, and a crew to back you
-   up all matter more for staying alive than ambition alone).
-   ============================================================ */
-function computeSurvivalOdds(userVector){
-    const [freedom, power, justice, knowledge, loyalty, ambition] = userVector;
-    const weighted = (power * 0.4) + (knowledge * 0.3) + (loyalty * 0.3);
-    let pct = Math.round((weighted / 10) * 100);
-    pct = Math.max(4, Math.min(98, pct));
-    return pct;
-}
-
-function survivalDescription(pct){
-    if(pct >= 80) return "Elite odds. Between raw power, sharp instincts, and a crew you can trust, you're built to make it through the New World.";
-    if(pct >= 60) return "Solid odds. You've got real strength and people watching your back — most storms won't sink you.";
-    if(pct >= 40) return "Coin-flip territory. You'll need the right crew and a little luck to make it to the next island in one piece.";
-    if(pct >= 20) return "Rough odds. Your instincts lean more reckless than prepared — a stronger crew would go a long way.";
-    return "Grim odds. On raw stats alone, the Grand Line eats profiles like this for breakfast — better stick close to a strong crew.";
-}
-
 function average(arr){ return arr.reduce((a,b)=>a+b,0) / arr.length; }
 
 function euclideanDistance(v1, v2){
@@ -1209,24 +996,12 @@ function calculateResult(){
     badge.className = `faction-badge ${closest.faction}`;
     badge.innerText = `${factionIcons[closest.faction] || ""} ${factionLabels[closest.faction] || closest.faction}`;
 
-    // Bounty: use the character's official bounty if we have one on
-    // record, otherwise fall back to the original stat-based formula.
-    const canonBounty = CANON_BOUNTIES[closest.name];
-    const bountySourceEl = document.getElementById('bounty-source');
-    let bounty;
-    if(canonBounty !== undefined){
-        bounty = canonBounty;
-        bountySourceEl.innerText = `Official bounty on record for ${closest.name}`;
-    } else {
-        const magnitude = userVector.reduce((a,b)=>a+b*b,0);
-        bounty = Math.round((magnitude * 137 + 4000) / 1000) * 1000;
-        bountySourceEl.innerText = closest.faction === "marine"
-            ? "No official bounty on record — Marine threat estimate"
-            : "Estimated from your answers";
-    }
+    const magnitude = userVector.reduce((a,b)=>a+b*b,0);
+    const bounty = Math.round((magnitude * 137 + 4000) / 1000) * 1000;
     document.getElementById('bounty-amount').innerHTML =
         `<span>BOUNTY</span>฿ ${bounty.toLocaleString()}`;
 
+    // Verdict banner: top two traits driving the match
     const ranked = labels.map((label,i)=>({label, value:userVector[i]})).sort((a,b)=>b.value-a.value);
     const top = ranked.slice(0,2).map(t=>`${t.label} (${t.value.toFixed(1)}/10)`).join(" and ");
     const verdictTitle = document.getElementById('verdict-title');
@@ -1235,21 +1010,22 @@ function calculateResult(){
     document.getElementById('verdict-reason').innerText =
         `${factionVerdictCopy[closest.faction] || ""} Your strongest instincts were ${top} — the same traits that define ${closest.name}.`;
 
+    // Crew position — role for pirates, rank/post for marines and
+    // revolutionaries, chosen from the user's dominant trait.
     const seedStrForRole = userVector.map(v=>v.toFixed(1)).join("-");
     const roleHash = hashString(seedStrForRole + closest.faction);
     const role = generateCrewRole(userVector, traitKeys, closest.faction, roleHash);
     document.getElementById('role-line').innerHTML = `${role.label}: <b>${role.title}</b>`;
     document.getElementById('role-desc').innerText = role.desc;
 
-    // Devil Fruit: canon fruit when the matched character has one,
-    // otherwise an original fruit grown from the user's own answers.
-    const fruit = resolveDevilFruit(closest, userVector, traitKeys);
-    document.getElementById('fruit-icon').innerHTML = generateFruitIcon(fruit.seedHash);
+    // Devil Fruit — generated from the exact trait vector, independent of
+    // which character was matched, so the fruit feels personal on its own.
+    const fruit = generateDevilFruit(userVector, traitKeys);
+    document.getElementById('fruit-icon').innerHTML = generateFruitIcon(fruit);
     document.getElementById('fruit-name').innerText = fruit.name;
     document.getElementById('fruit-type').innerText = `${fruit.type} · Devil Fruit`;
     document.getElementById('fruit-power').innerText = fruit.power;
     document.getElementById('fruit-flavor').innerText = fruit.flavor;
-    document.getElementById('fruit-card').setAttribute('data-fruit-badge', fruit.canon ? `${closest.name.toUpperCase()}'S FRUIT` : "NEWLY DISCOVERED");
 
     const barsDiv = document.getElementById('trait-bars');
     barsDiv.innerHTML = '';
@@ -1265,21 +1041,12 @@ function calculateResult(){
         });
     });
 
-    const survivalPct = computeSurvivalOdds(userVector);
-    const survivalPctEl = document.getElementById('survival-pct');
-    survivalPctEl.innerText = `${survivalPct}%`;
-    survivalPctEl.className = `survival-pct${survivalPct < 40 ? ' risky' : ''}`;
-    document.getElementById('survival-desc').innerText = survivalDescription(survivalPct);
-    requestAnimationFrame(()=>{
-        document.getElementById('survival-fill').style.width = `${survivalPct}%`;
-    });
-
+    // Rarity stat — deterministic per character so it reads as a real stat,
+    // not a random number that changes on refresh.
     const charHash = hashString(closest.name);
-    const rarityPct = (2 + (charHash % 900) / 100).toFixed(1);
-    const fruitLabel = fruit.canon ? fruit.name.split(' no Mi')[0] + " no Mi" : fruit.name.split(' no Mi')[0];
-    document.getElementById('rarity-line').innerHTML = fruit.canon
-        ? `Only <b>${rarityPct}%</b> of takers match ${closest.name}'s poster — the same taker profile that lines up with the ${fruitLabel}.`
-        : `Only <b>${rarityPct}%</b> of takers match ${closest.name}'s poster — and this exact ${fruitLabel} no Mi has never grown for anyone else.`;
+    const rarityPct = (2 + (charHash % 900) / 100).toFixed(1); // 2.0% - 11.0%
+    document.getElementById('rarity-line').innerHTML =
+        `Only <b>${rarityPct}%</b> of takers match ${closest.name}'s poster — and this exact ${fruit.name.split(' no Mi')[0]} no Mi has never grown for anyone else.`;
 
     lastResult = { name: closest.name, faction: factionLabels[closest.faction] || closest.faction, bounty: bounty.toLocaleString(), fruitName: fruit.name, roleTitle: role.title };
 
@@ -1307,6 +1074,8 @@ function shareFacebook(){
 }
 
 function shareInstagram(){
+    // Instagram has no web share-intent for pre-filled posts, so we copy the
+    // result text to the clipboard for the user to paste into a Story/DM/bio.
     const text = resultText() + " " + location.href;
     navigator.clipboard.writeText(text).then(()=>{
         const note = document.getElementById('share-copied');
@@ -1324,6 +1093,9 @@ function downloadPoster(){
     btn.innerText = 'Rendering...';
     btn.disabled = true;
 
+    // Make sure the custom webfont has actually finished loading before
+    // html2canvas snapshots the poster — otherwise text can render blank
+    // in the captured image even though it looks fine on screen.
     const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
 
     fontsReady.then(() => html2canvas(target, {
@@ -1349,6 +1121,3 @@ drawCompass();
 </script>
 </body>
 </html>
-
-
-
