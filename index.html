@@ -1,3 +1,10 @@
+<!-- 
+Copyright (c) 2026 One Piece Sailing: WantedRank. 
+All rights reserved. 
+
+Unauthorized copying, distribution, or modification of this file, 
+via any medium, is strictly prohibited. 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +17,8 @@
 <meta property="og:title" content="Which One Piece Character Are You? — Bounty Board">
 <meta property="og:description" content="15 questions. One wanted poster. Find your One Piece character, bounty, Devil Fruit, and crew position.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com/">
-<meta property="og:image" content="https://yourdomain.com/preview.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Which One Piece Character Are You? — Bounty Board">
-<meta name="twitter:description" content="15 questions. One wanted poster. Find your One Piece character, bounty, Devil Fruit, and crew position.">
-<meta name="twitter:image" content="https://yourdomain.com/preview.png">
-<link rel="canonical" href="https://yourdomain.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Bounty Board — One Piece Character Quiz",
-  "url": "https://yourdomain.com/",
-  "applicationCategory": "Entertainment",
-  "operatingSystem": "Any",
-  "description": "Take the free One Piece personality quiz and find out which character you really are. Get your wanted poster, official bounty, Devil Fruit power, and crew position — Pirate, Marine, or Revolutionary.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
 <style>
     :root{
         --parchment:#EDE0C0;
@@ -96,7 +80,7 @@
         pointer-events:none;
     }
 
-    .title{
+    h1.title{
         font-family:'Pirata One', cursive;
         text-align:center;
         color:var(--navy);
@@ -369,56 +353,6 @@
     }
     .rarity-line b{ color:var(--red); }
 
-    .survival-card{
-        margin:0 0 18px;
-        padding:14px 16px;
-        background:rgba(255,255,255,0.3);
-        border:2px solid var(--ink);
-        border-radius:4px;
-        text-align:left;
-    }
-    .survival-top{
-        display:flex;
-        align-items:baseline;
-        justify-content:space-between;
-        margin-bottom:8px;
-        flex-wrap:wrap;
-        gap:6px;
-    }
-    .survival-heading{
-        font-size:0.68em;
-        letter-spacing:2px;
-        text-transform:uppercase;
-        color:var(--brown);
-        font-weight:bold;
-    }
-    .survival-pct{
-        font-family:'Pirata One', cursive;
-        font-size:1.6em;
-        color:var(--green);
-        letter-spacing:1px;
-    }
-    .survival-pct.risky{ color:var(--red); }
-    .survival-track{
-        height:10px;
-        background:rgba(107,66,38,0.2);
-        border-radius:5px;
-        overflow:hidden;
-        margin-bottom:8px;
-    }
-    .survival-fill{
-        height:100%;
-        background:linear-gradient(90deg, var(--red), var(--gold), var(--green));
-        width:0%;
-        transition:width 0.8s ease;
-        border-radius:5px;
-    }
-    .survival-desc{
-        font-size:0.78em;
-        color:var(--ink);
-        line-height:1.5;
-    }
-
     .share-wrap{ margin-bottom:16px; }
     .share-heading{ font-size:0.68em; letter-spacing:2px; text-transform:uppercase; color:var(--brown); margin-bottom:8px; }
     .share-row{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
@@ -453,6 +387,65 @@
         .box{ animation:none; }
         .trait-fill{ transition:none; }
     }
+
+    /* ---------- Devil Fruit Encyclopedia ---------- */
+    .encyclopedia-link{
+        display:block;
+        margin:12px auto 0;
+        background:none;
+        border:none;
+        color:var(--navy);
+        text-decoration:underline;
+        font-family:'Special Elite', monospace;
+        font-size:0.78em;
+        cursor:pointer;
+        text-align:center;
+    }
+    .encyclopedia-link:hover{ color:var(--red); }
+    #encyclopedia-area{ display:none; }
+    .ency-header{ text-align:center; margin-bottom:14px; }
+    .ency-back{
+        background:none; border:none; color:var(--brown); cursor:pointer;
+        font-family:'Special Elite', monospace; font-size:0.78em; text-decoration:underline;
+        display:block; margin:0 auto 10px;
+    }
+    .ency-search{
+        width:100%; padding:10px 12px; margin-bottom:12px;
+        border:2px solid var(--brown); border-radius:2px;
+        background:rgba(255,255,255,0.4); color:var(--ink);
+        font-family:'Special Elite', monospace; font-size:0.85em;
+    }
+    .ency-filters{ display:flex; gap:6px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+    .ency-filter-btn{
+        padding:6px 12px; border-radius:16px; border:2px solid var(--brown);
+        background:rgba(255,255,255,0.25); color:var(--brown);
+        font-family:'Special Elite', monospace; font-size:0.7em;
+        letter-spacing:1px; text-transform:uppercase; cursor:pointer; font-weight:bold;
+    }
+    .ency-filter-btn.active{ background:var(--brown); color:var(--parchment); }
+    .ency-count{ text-align:center; font-size:0.68em; color:var(--brown); opacity:0.8; margin-bottom:10px; }
+    .ency-list{ max-height:440px; overflow-y:auto; padding-right:4px; }
+    .ency-card{
+        text-align:left; padding:10px 12px; margin-bottom:8px;
+        background:rgba(255,255,255,0.3); border-left:4px solid var(--brown);
+        border-radius:2px;
+    }
+    .ency-card.zoan{ border-left-color:var(--green); }
+    .ency-card.logia{ border-left-color:var(--red); }
+    .ency-card.paramecia{ border-left-color:var(--gold); }
+    .ency-card-top{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:3px; flex-wrap:wrap; }
+    .ency-name{ font-family:'Pirata One', cursive; font-size:1.15em; color:var(--ink); letter-spacing:0.5px; }
+    .ency-type{
+        font-size:0.6em; letter-spacing:1px; text-transform:uppercase; font-weight:bold;
+        padding:2px 7px; border-radius:9px; color:var(--parchment); white-space:nowrap;
+    }
+    .ency-type.zoan{ background:var(--green); }
+    .ency-type.logia{ background:var(--red); }
+    .ency-type.paramecia{ background:var(--gold); }
+    .ency-desc{ font-size:0.78em; color:var(--ink); line-height:1.5; }
+    .ency-empty{ text-align:center; font-size:0.85em; color:var(--brown); padding:20px 0; }
+    .ency-list::-webkit-scrollbar{ width:8px; }
+    .ency-list::-webkit-scrollbar-thumb{ background:var(--parchment-shadow); border-radius:4px; }
 </style>
 </head>
 <body>
@@ -480,10 +473,28 @@
         </div>
         <button class="btn start-btn" onclick="startQuiz()">Set Sail</button>
         <div class="intro-note">Takes about 2 minutes · your answers stay on this page</div>
+        <button class="encyclopedia-link" onclick="openEncyclopedia()">📖 Browse the Devil Fruit Encyclopedia (100 fruits)</button>
+    </div>
+
+    <div id="encyclopedia-area">
+        <div class="ency-header">
+            <h1 class="title">Devil Fruit Encyclopedia</h1>
+            <div class="subtitle">100 fruits, browsable by type</div>
+        </div>
+        <button class="ency-back" onclick="closeEncyclopedia()">← Back to Bounty Board</button>
+        <input type="text" id="ency-search" class="ency-search" placeholder="Search by fruit name or power…" oninput="renderEncyclopedia()">
+        <div class="ency-filters">
+            <button class="ency-filter-btn active" data-filter="all" onclick="setEncyclopediaFilter('all')">All</button>
+            <button class="ency-filter-btn" data-filter="zoan" onclick="setEncyclopediaFilter('zoan')">Zoan</button>
+            <button class="ency-filter-btn" data-filter="logia" onclick="setEncyclopediaFilter('logia')">Logia</button>
+            <button class="ency-filter-btn" data-filter="paramecia" onclick="setEncyclopediaFilter('paramecia')">Paramecia</button>
+        </div>
+        <div class="ency-count" id="ency-count"></div>
+        <div class="ency-list" id="ency-list"></div>
     </div>
 
     <div id="quiz-area" style="display:none;">
-        <h2 class="title">Bounty Board</h2>
+        <h1 class="title">Bounty Board</h1>
         <div class="subtitle">Find your true pirate nature</div>
         <div class="wheel-wrap">
             <svg id="wheel-svg" width="70" height="70" viewBox="0 0 70 70"></svg>
@@ -527,15 +538,6 @@
             </div>
 
             <div class="trait-bars" id="trait-bars"></div>
-
-            <div class="survival-card">
-                <div class="survival-top">
-                    <span class="survival-heading">Survival Odds — Grand Line</span>
-                    <span class="survival-pct" id="survival-pct"></span>
-                </div>
-                <div class="survival-track"><div class="survival-fill" id="survival-fill"></div></div>
-                <div class="survival-desc" id="survival-desc"></div>
-            </div>
 
             <div class="rarity-line" id="rarity-line"></div>
         </div>
@@ -1103,7 +1105,7 @@ function buildWheel(){
         const y1 = cy + rInner*Math.sin(angle);
         const x2 = cx + rOuter*Math.cos(angle);
         const y2 = cy + rOuter*Math.sin(angle);
-         html += `<line id="spoke-${i}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#B9A374" stroke-width="3.5" stroke-linecap="round"/>`;
+        html += `<line id="spoke-${i}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#B9A374" stroke-width="3.5" stroke-linecap="round"/>`;
     }
     html += `<circle cx="${cx}" cy="${cy}" r="4" fill="#6B4226"/>`;
     svg.innerHTML = html;
@@ -1142,29 +1144,6 @@ function selectAnswer(trait, value){
         updateWheel();
         calculateResult();
     }
-}
-
-/* ============================================================
-   Survival Odds
-   A deterministic estimate of how well this profile would hold
-   up on the Grand Line, weighted toward Power, Knowledge, and
-   Loyalty (raw strength, good judgment, and a crew to back you
-   up all matter more for staying alive than ambition alone).
-   ============================================================ */
-function computeSurvivalOdds(userVector){
-    const [freedom, power, justice, knowledge, loyalty, ambition] = userVector;
-    const weighted = (power * 0.4) + (knowledge * 0.3) + (loyalty * 0.3);
-    let pct = Math.round((weighted / 10) * 100);
-    pct = Math.max(4, Math.min(98, pct));
-    return pct;
-}
-
-function survivalDescription(pct){
-    if(pct >= 80) return "Elite odds. Between raw power, sharp instincts, and a crew you can trust, you're built to make it through the New World.";
-    if(pct >= 60) return "Solid odds. You've got real strength and people watching your back — most storms won't sink you.";
-    if(pct >= 40) return "Coin-flip territory. You'll need the right crew and a little luck to make it to the next island in one piece.";
-    if(pct >= 20) return "Rough odds. Your instincts lean more reckless than prepared — a stronger crew would go a long way.";
-    return "Grim odds. On raw stats alone, the Grand Line eats profiles like this for breakfast — better stick close to a strong crew.";
 }
 
 function average(arr){ return arr.reduce((a,b)=>a+b,0) / arr.length; }
@@ -1257,15 +1236,6 @@ function calculateResult(){
         });
     });
 
-    const survivalPct = computeSurvivalOdds(userVector);
-    const survivalPctEl = document.getElementById('survival-pct');
-    survivalPctEl.innerText = `${survivalPct}%`;
-    survivalPctEl.className = `survival-pct${survivalPct < 40 ? ' risky' : ''}`;
-    document.getElementById('survival-desc').innerText = survivalDescription(survivalPct);
-    requestAnimationFrame(()=>{
-        document.getElementById('survival-fill').style.width = `${survivalPct}%`;
-    });
-
     const charHash = hashString(closest.name);
     const rarityPct = (2 + (charHash % 900) / 100).toFixed(1);
     const fruitLabel = fruit.canon ? fruit.name.split(' no Mi')[0] + " no Mi" : fruit.name.split(' no Mi')[0];
@@ -1337,11 +1307,176 @@ function downloadPoster(){
     });
 }
 
+/* ============================================================
+   Devil Fruit Encyclopedia
+   100 fruits spanning Zoan (Standard/Ancient/Mythical), Logia,
+   and Paramecia. Names and type classifications are factual
+   reference details; every description below is written fresh,
+   in this file's own words, rather than copied from any source.
+   ============================================================ */
+const ENCYCLOPEDIA = [
+    // --- Zoan: Standard ---
+    { name:"Hito Hito no Mi", category:"zoan", subtype:"Standard", desc:"Lets a non-human creature take on a human or human-hybrid form, along with human-level intelligence." },
+    { name:"Ushi Ushi no Mi, Model: Bison", category:"zoan", subtype:"Standard", desc:"Grants a heavyset bison hybrid form built around punishing charges." },
+    { name:"Ushi Ushi no Mi, Model: Giraffe", category:"zoan", subtype:"Standard", desc:"Grants a long-necked giraffe hybrid form suited to long-reach strikes." },
+    { name:"Inu Inu no Mi, Model: Wolf", category:"zoan", subtype:"Standard", desc:"Sharpens the senses and grants the claws and speed of a wolf." },
+    { name:"Inu Inu no Mi, Model: Jackal", category:"zoan", subtype:"Standard", desc:"Grants a lean, desert-adapted jackal fighting form." },
+    { name:"Inu Inu no Mi, Model: Dachshund", category:"zoan", subtype:"Standard", desc:"Turns the eater into a small dachshund — one of the more unassuming Zoan results on record." },
+    { name:"Neko Neko no Mi, Model: Leopard", category:"zoan", subtype:"Standard", desc:"Built for quick, close-range strikes in a leopard hybrid form." },
+    { name:"Zou Zou no Mi", category:"zoan", subtype:"Standard", desc:"Grants a full elephant transformation, adding huge mass and trampling force." },
+    { name:"Tori Tori no Mi, Model: Falcon", category:"zoan", subtype:"Standard", desc:"One of the few fruits that grants genuine high-speed flight." },
+    { name:"Hebi Hebi no Mi, Model: King Cobra", category:"zoan", subtype:"Standard", desc:"Grants a venom-spitting cobra form." },
+    { name:"Hebi Hebi no Mi, Model: Anaconda", category:"zoan", subtype:"Standard", desc:"Grants crushing constriction strength and tough scales." },
+    { name:"Mushi Mushi no Mi, Model: Rhinoceros Beetle", category:"zoan", subtype:"Standard", desc:"Grants a horned insect form with enormous lifting power." },
+    { name:"Mushi Mushi no Mi, Model: Hornet", category:"zoan", subtype:"Standard", desc:"Grants flight and a venomous stinger in insect form." },
+    { name:"Uma Uma no Mi", category:"zoan", subtype:"Standard", desc:"Grants a horse or horse-hybrid transformation." },
+    // --- Zoan: Ancient ---
+    { name:"Zou Zou no Mi, Model: Mammoth", category:"zoan", subtype:"Ancient", desc:"Grants a prehistoric mammoth form with immense strength and toughness." },
+    { name:"Ryu Ryu no Mi, Model: Pteranodon", category:"zoan", subtype:"Ancient", desc:"Grants airborne flight and sharp wing-edge strikes." },
+    { name:"Ryu Ryu no Mi, Model: Brachiosaurus", category:"zoan", subtype:"Ancient", desc:"Grants colossal size paired with heavy natural armor." },
+    { name:"Ryu Ryu no Mi, Model: Spinosaurus", category:"zoan", subtype:"Ancient", desc:"Grants a powerful bite along with fast, aggressive movement." },
+    { name:"Ryu Ryu no Mi, Model: Allosaurus", category:"zoan", subtype:"Ancient", desc:"Grants a swift, ferocious predator form built for close combat." },
+    { name:"Ryu Ryu no Mi, Model: Triceratops", category:"zoan", subtype:"Ancient", desc:"Grants an armored frill and devastating headbutt charges." },
+    { name:"Ryu Ryu no Mi, Model: Pachycephalosaurus", category:"zoan", subtype:"Ancient", desc:"Grants an unusually thick skull built for headbutt attacks." },
+    { name:"Neko Neko no Mi, Model: Saber-Toothed Tiger", category:"zoan", subtype:"Ancient", desc:"Combines ancient muscle mass with long, deadly fangs." },
+    { name:"Kumo Kumo no Mi, Model: Rosamygale", category:"zoan", subtype:"Ancient", desc:"Grants an ancient spider form able to spin webs and scale walls." },
+    // --- Zoan: Mythical ---
+    { name:"Hito Hito no Mi, Model: Nika", category:"zoan", subtype:"Mythical", desc:"Said to be the fruit of the \"Sun God,\" granting an elastic, freedom-driven combat form." },
+    { name:"Tori Tori no Mi, Model: Phoenix", category:"zoan", subtype:"Mythical", desc:"Emits blue regenerative flames that heal the user and nearby allies." },
+    { name:"Uo Uo no Mi, Model: Seiryu", category:"zoan", subtype:"Mythical", desc:"Grants a full sky-dragon transformation with breath weapons and flight." },
+    { name:"Hito Hito no Mi, Model: Daibutsu", category:"zoan", subtype:"Mythical", desc:"Grants a massive golden Buddha form capable of heavy shockwave attacks." },
+    { name:"Inu Inu no Mi, Model: Nine-Tailed Fox", category:"zoan", subtype:"Mythical", desc:"Grants a kitsune form able to shapeshift into exact likenesses of others." },
+    { name:"Inu Inu no Mi, Model: Okuchi no Makami", category:"zoan", subtype:"Mythical", desc:"Grants a divine wolf form with ice-breath abilities." },
+    { name:"Hebi Hebi no Mi, Model: Yamata no Orochi", category:"zoan", subtype:"Mythical", desc:"Grants an eight-headed serpent form that functionally provides multiple lives." },
+    { name:"Uma Uma no Mi, Model: Pegasus", category:"zoan", subtype:"Mythical", desc:"Grants a winged horse form capable of true flight." },
+    { name:"Inu Inu no Mi, Model: Bakeneko", category:"zoan", subtype:"Mythical", desc:"Grants a mythical cat-spirit form drawn from old folklore." },
+    { name:"Ushi Ushi no Mi, Model: Baize", category:"zoan", subtype:"Mythical", desc:"Grants a legendary beast form tied to ancient spirit lore." },
+    // --- Logia ---
+    { name:"Moku Moku no Mi", category:"logia", desc:"Turns the body to smoke, enabling flight, intangibility, and choking clouds." },
+    { name:"Mera Mera no Mi", category:"logia", desc:"Turns the body to fire, unleashing intense heat and flame blasts." },
+    { name:"Suna Suna no Mi", category:"logia", desc:"Turns the body to sand, able to draw out moisture and whip up storms." },
+    { name:"Goro Goro no Mi", category:"logia", desc:"Turns the body to electricity, enabling near-instant movement and high-voltage strikes." },
+    { name:"Hie Hie no Mi", category:"logia", desc:"Turns the body to ice, able to freeze seawater and foes almost instantly." },
+    { name:"Yami Yami no Mi", category:"logia", desc:"Commands a gravity-like darkness that pulls in targets and cancels other Devil Fruit powers on contact." },
+    { name:"Magu Magu no Mi", category:"logia", desc:"Turns the body to molten magma, capable of burning through almost anything." },
+    { name:"Pika Pika no Mi", category:"logia", desc:"Turns the body to light, allowing light-speed movement and beam attacks." },
+    { name:"Numa Numa no Mi", category:"logia", desc:"Turns the body into a bottomless mud swamp able to swallow enemies whole." },
+    { name:"Gasu Gasu no Mi", category:"logia", desc:"Commands a range of gases, from toxic fumes to oxygen removal." },
+    { name:"Yuki Yuki no Mi", category:"logia", desc:"Turns the body to snow, able to raise blizzards and thick snow walls." },
+    { name:"Mori Mori no Mi", category:"logia", desc:"Turns the body into living plant matter that spreads roots and draws in nutrients." },
+    { name:"Susu Susu no Mi", category:"logia", desc:"Turns the body to drifting ash and soot capable of smothering a target." },
+    { name:"Ame Ame no Mi", category:"logia", desc:"Turns the body into syrup or hardened candy at will." },
+    { name:"Pasa Pasa no Mi", category:"logia", desc:"Turns the body into sheets of paper that dodge blows and burn away cleanly." },
+    // --- Paramecia ---
+    { name:"Bara Bara no Mi", category:"paramecia", desc:"Splits the body into separate floating pieces, making slashing attacks harmless." },
+    { name:"Sube Sube no Mi", category:"paramecia", desc:"Makes the skin so smooth that physical strikes glide right off." },
+    { name:"Kilo Kilo no Mi", category:"paramecia", desc:"Lets the user adjust their own body weight across a wide range at will." },
+    { name:"Bomu Bomu no Mi", category:"paramecia", desc:"Makes any part of the body, including breath, explosive without harming the user." },
+    { name:"Hana Hana no Mi", category:"paramecia", desc:"Sprouts duplicate limbs from any surface within reach." },
+    { name:"Doru Doru no Mi", category:"paramecia", desc:"Generates and shapes wax that can harden into steel-strength barriers." },
+    { name:"Baku Baku no Mi", category:"paramecia", desc:"Lets the user consume nearly any material and fuse it directly into their own body." },
+    { name:"Mane Mane no Mi", category:"paramecia", desc:"Lets the user perfectly copy the appearance of anyone whose face they've touched." },
+    { name:"Toge Toge no Mi", category:"paramecia", desc:"Grows sharp, piercing spikes from anywhere on the body." },
+    { name:"Supa Supa no Mi", category:"paramecia", desc:"Turns parts of the body into razor-edged steel." },
+    { name:"Ori Ori no Mi", category:"paramecia", desc:"Generates iron bars and restraints straight from the user's own limbs." },
+    { name:"Bane Bane no Mi", category:"paramecia", desc:"Turns arms and legs into coiled springs for bouncing, high-force strikes." },
+    { name:"Ito Ito no Mi", category:"paramecia", desc:"Generates fine, razor-sharp strings for cutting objects or puppeteering people." },
+    { name:"Noro Noro no Mi", category:"paramecia", desc:"Fires a beam that slows a target's motion for roughly half a minute." },
+    { name:"Doa Doa no Mi", category:"paramecia", desc:"Opens working doors in walls, open air, or even other people, leading into a hidden pocket space." },
+    { name:"Awa Awa no Mi", category:"paramecia", desc:"Produces soap bubbles that strip away friction and physical strength." },
+    { name:"Sabi Sabi no Mi", category:"paramecia", desc:"Causes metal or organic material to rapidly corrode on contact." },
+    { name:"Yomi Yomi no Mi", category:"paramecia", desc:"Returns the user to life once after death and lets their soul act independently of their body." },
+    { name:"Kage Kage no Mi", category:"paramecia", desc:"Steals, stitches, and reanimates shadows, weakening whoever they're taken from." },
+    { name:"Horo Horo no Mi", category:"paramecia", desc:"Summons ghosts that sap a target's morale and willpower." },
+    { name:"Suke Suke no Mi", category:"paramecia", desc:"Grants full invisibility to the user and anything they're holding." },
+    { name:"Nikyu Nikyu no Mi", category:"paramecia", desc:"Lets the user repel virtually anything they touch — attacks, air, people, even pain." },
+    { name:"Doku Doku no Mi", category:"paramecia", desc:"Produces corrosive, choking poison in liquid or gas form." },
+    { name:"Horu Horu no Mi", category:"paramecia", desc:"Injects hormones that can alter physical traits, energy, or healing speed." },
+    { name:"Choki Choki no Mi", category:"paramecia", desc:"Turns the hands into blades capable of cutting through stone and steel." },
+    { name:"Gura Gura no Mi", category:"paramecia", desc:"Generates shockwaves powerful enough to shatter the air and trigger earthquakes." },
+    { name:"Fuwa Fuwa no Mi", category:"paramecia", desc:"Lifts the user, and any non-living object they touch, into weightless flight." },
+    { name:"Woshu Woshu no Mi", category:"paramecia", desc:"Wrings enemies out like laundry, said to \"cleanse\" ill intent along with it." },
+    { name:"Mato Mato no Mi", category:"paramecia", desc:"Locks thrown projectiles onto anyone the user has previously marked." },
+    { name:"Ope Ope no Mi", category:"paramecia", desc:"Opens a spherical \"Room\" letting the user freely rearrange or manipulate anything inside it." },
+    { name:"Buki Buki no Mi", category:"paramecia", desc:"Turns limbs, or the whole body, into functioning firearms or blades." },
+    { name:"Guru Guru no Mi", category:"paramecia", desc:"Spins body parts like propellers, enabling flight or drilling force." },
+    { name:"Beta Beta no Mi", category:"paramecia", desc:"Produces sticky, flammable mucus that traps a target and can be ignited." },
+    { name:"Bari Bari no Mi", category:"paramecia", desc:"Conjures solid, transparent barriers in any shape." },
+    { name:"Ishi Ishi no Mi", category:"paramecia", desc:"Lets the user merge with and command surrounding rock formations." },
+    { name:"Pamu Pamu no Mi", category:"paramecia", desc:"Makes the user's own body, or non-living objects they touch, swell up and burst." },
+    { name:"Sui Sui no Mi", category:"paramecia", desc:"Lets the user glide through solid ground or walls the way a fish moves through water." },
+    { name:"Ton Ton no Mi", category:"paramecia", desc:"An especially strong weight-type fruit, letting the user's mass climb into the tens of thousands of tons." },
+    { name:"Hira Hira no Mi", category:"paramecia", desc:"Flattens solid matter into flexible, cloth-like sheets without losing its toughness." },
+    { name:"Giro Giro no Mi", category:"paramecia", desc:"Grants x-ray sight, long-distance vision, and the ability to read surface thoughts." },
+    { name:"Ato Ato no Mi", category:"paramecia", desc:"Turns enemies or incoming attacks into harmless abstract art." },
+    { name:"Nagi Nagi no Mi", category:"paramecia", desc:"Cancels sound entirely, either from the user or within a set area." },
+    { name:"Soru Soru no Mi", category:"paramecia", desc:"Draws a portion of a person's lifespan out as a visible fragment, then uses it to animate objects." },
+    { name:"Mochi Mochi no Mi", category:"paramecia", desc:"Lets the user generate and reshape their body into sticky, stretchable mochi." },
+    { name:"Kuku Kuku no Mi", category:"paramecia", desc:"Turns raw material or terrain into edible food." },
+    { name:"Bisu Bisu no Mi", category:"paramecia", desc:"Generates tough, biscuit-like matter that can be shaped into soldiers or structures." },
+    { name:"Mira Mira no Mi", category:"paramecia", desc:"Creates mirrors that reflect attacks and open onto a connected mirror-space." },
+    { name:"Pero Pero no Mi", category:"paramecia", desc:"Hardens candy into ladders, restraints, or other improvised structures." },
+    { name:"Memo Memo no Mi", category:"paramecia", desc:"Can pull out, edit, or implant memories in someone's mind." },
+    { name:"Jiki Jiki no Mi", category:"paramecia", desc:"Controls magnetic force, able to assemble scrap metal into large weapons." },
+    { name:"Shiro Shiro no Mi", category:"paramecia", desc:"Turns the user's body into a living fortress, complete with a garrison inside." },
+    { name:"Zushi Zushi no Mi", category:"paramecia", desc:"Commands gravity, crushing targets or pulling distant objects — even meteors — toward the user." }
+];
+
+let encyclopediaFilter = "all";
+
+function openEncyclopedia(){
+    document.getElementById('intro-area').style.display = 'none';
+    document.getElementById('encyclopedia-area').style.display = 'block';
+    renderEncyclopedia();
+}
+
+function closeEncyclopedia(){
+    document.getElementById('encyclopedia-area').style.display = 'none';
+    document.getElementById('intro-area').style.display = 'block';
+}
+
+function setEncyclopediaFilter(filter){
+    encyclopediaFilter = filter;
+    document.querySelectorAll('.ency-filter-btn').forEach(btn=>{
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+    });
+    renderEncyclopedia();
+}
+
+function renderEncyclopedia(){
+    const query = document.getElementById('ency-search').value.trim().toLowerCase();
+    const listEl = document.getElementById('ency-list');
+    const countEl = document.getElementById('ency-count');
+
+    const filtered = ENCYCLOPEDIA.filter(fruit=>{
+        const matchesFilter = encyclopediaFilter === 'all' || fruit.category === encyclopediaFilter;
+        const matchesSearch = !query ||
+            fruit.name.toLowerCase().includes(query) ||
+            fruit.desc.toLowerCase().includes(query);
+        return matchesFilter && matchesSearch;
+    });
+
+    countEl.innerText = `${filtered.length} of ${ENCYCLOPEDIA.length} fruits`;
+
+    if(filtered.length === 0){
+        listEl.innerHTML = `<div class="ency-empty">No fruits match that search.</div>`;
+        return;
+    }
+
+    listEl.innerHTML = filtered.map(fruit=>{
+        const typeLabel = fruit.subtype ? `${fruit.subtype} Zoan` : fruit.category.charAt(0).toUpperCase() + fruit.category.slice(1);
+        return `
+        <div class="ency-card ${fruit.category}">
+            <div class="ency-card-top">
+                <span class="ency-name">${fruit.name}</span>
+                <span class="ency-type ${fruit.category}">${typeLabel}</span>
+            </div>
+            <div class="ency-desc">${fruit.desc}</div>
+        </div>`;
+    }).join('');
+}
+
 drawCompass();
 </script>
 </body>
 </html>
-
-
-        
-        html += `<line id="spoke-${i}" x1="${x1}" y1="${y1}" x2="${
