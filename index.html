@@ -445,7 +445,106 @@ via any medium, is strictly prohibited.
     .ency-desc{ font-size:0.78em; color:var(--ink); line-height:1.5; }
     .ency-empty{ text-align:center; font-size:0.85em; color:var(--brown); padding:20px 0; }
     .ency-list::-webkit-scrollbar{ width:8px; }
-    .ency-list::-webkit-scrollbar-thumb{ background:var(--parchment-shadow); border-radius:4px; }
+    .ency-list::-webkit-scrollbar-thumb{ background:var(--parchment-shadow); border-radius:4px; }  /* ==========================================
+   1. Universal Baseline
+   Ensures seamless scaling across all devices
+   ========================================== */
+
+/* Universal box-sizing to prevent elements from overflowing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    /* Fluid padding that adjusts based on screen width */
+    padding: clamp(12px, 3vw, 40px);
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+.box {
+    width: 100%;
+    /* Fluid max-width that scales smoothly without relying on fixed breakpoints */
+    max-width: min(90vw, 680px);
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 46px);
+}
+
+/* Fluid response for media and interactive elements */
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.share-btn, .btn {
+    max-width: 100%;
+}
+
+
+/* ==========================================
+   2. Responsive Media Queries
+   ========================================== */
+
+/* ---- Extra Small Devices & Mobile Phones ---- */
+@media (max-width: 599px) {
+    .wanted-stamp { 
+        margin-bottom: 10px; 
+    }
+    .fruit-card { 
+        flex-direction: column; 
+        text-align: center; 
+        align-items: center;
+    }
+    .fruit-info { 
+        min-width: 0; 
+        width: 100%;
+        text-align: center; 
+    }
+    .verdict-reason, .report { 
+        font-size: 0.85em; 
+    }
+    .share-btn { 
+        width: 100%; 
+    }
+    .trait-row .label { 
+        width: 64px; 
+    }
+}
+
+/* ---- Short Screen Mobile Devices ---- */
+@media (max-height: 700px) and (max-width: 599px) {
+    .compass-wrap { margin: 2px 0 10px; }
+    .intro-copy { margin-bottom: 14px; }
+    .intro-factions { margin-bottom: 16px; }
+}
+
+/* ---- Tablets & Medium Screens ---- */
+@media (min-width: 600px) and (max-width: 899px) {
+    .intro-copy { font-size: 0.98em; }
+    .fruit-card { padding: 16px 20px; }
+    .share-btn { min-width: 140px; }
+}
+
+/* ---- Laptops & Large Screens ---- */
+@media (min-width: 900px) {
+    .intro-copy { font-size: 1em; }
+    .btn:hover { transform: translateX(4px); }
+}
+
+
+/* ==========================================
+   3. Accessibility & Reduced Motion
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 </style>
 </head>
 <body>
